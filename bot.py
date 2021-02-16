@@ -38,7 +38,7 @@ def main():
 updater.start_webhook(listen="0.0.0.0",
                           port=int(PORT),
                           url_path=TOKEN)
-updater.bot.setWebhook('https://guarded-meadow-10923.herokuapp.com/' + TOKEN)
+updater.bot.setWebhook('https://morning-journey-60251.herokuapp.com/' + TOKEN)
 
 updater.idle()
 
