@@ -3,10 +3,11 @@ import logging
 import os
 
 PORT = int(os.environ.get('PORT', 5000))
-TOKEN= '1640047450:AAFyIlPqqgvUU-CWSPLj2jeyFpzOZEkzSOM'
 
+# LOGGER WITH TOKEN
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.INFO)
 logger = logging.getLogger(__name__)
+TOKEN= '1640047450:AAFyIlPqqgvUU-CWSPLj2jeyFpzOZEkzSOM'
 
 def start(update, context):
     """Send a message when the command /start is issued."""
@@ -24,7 +25,7 @@ def sendImage(update,context):
 def help(update,context):
     context.bot.send_message(chat_id=update.effective_chat.id, text='Esses são os comandos disponiveis. \n /help  \n /start \n /planej')
 
-
+"""START THE BOT"""
 def main():
     updater = Updater('1640047450:AAFyIlPqqgvUU-CWSPLj2jeyFpzOZEkzSOM')
     dp = updater.dispatcher
