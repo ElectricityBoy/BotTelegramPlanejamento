@@ -11,23 +11,23 @@ TOKEN= '1620239627:AAFn7BmK9KklQtTr-i7cCeKCqTSBN0FWOyI'
 
 def start(update, context):
     """Send a message when the command /start is issued."""
-    update.message.reply_text('Olá! Eu sou o bot PlanejamentoPET')
+    context.bot.send_message(chat_id=update.effective_chat.id, text='Olá! Eu sou o bot PlanejamentoPET')
 
 def unknown(update, context):
-   update.message.reply_text('Desculpa. Não entendi o seu comando')
+    context.bot.send_message(chat_id=update.effective_chat.id, text="Desculpa. Não entendi o seu comando")
 
 unknown_handler = MessageHandler(Filters.command, unknown)
 
 def sendImage(update,context):
     url='https://i.ibb.co/j8q5J85/planej.jpg'
-    update.message.reply_photo(chat_id=update.effective_chat.id, photo=url)
+    context.bot.send_photo(chat_id=update.effective_chat.id, photo=url)
 
 def help(update,context):
-    update.message.reply_text('Esses são os comandos disponiveis. \n /help  \n /start \n /planej')
+    context.bot.send_message(chat_id=update.effective_chat.id, text='Esses são os comandos disponiveis. \n /help  \n /start \n /planej')
 
 
 def main():
-    updater = Updater('1620239627:AAFn7BmK9KklQtTr-i7cCeKCqTSBN0FWOyI', use_context=True)
+    updater = Updater('1620239627:AAFn7BmK9KklQtTr-i7cCeKCqTSBN0FWOyI')
     dp = updater.dispatcher
     dp.add_handler(CommandHandler("planej",sendImage))
     dp.add_handler(CommandHandler("start",start))
