@@ -7,7 +7,7 @@ PORT = int(os.environ.get('PORT', 5000))
 # LOGGER WITH TOKEN
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.INFO)
 logger = logging.getLogger(__name__)
-TOKEN= '1640047450:AAFyIlPqqgvUU-CWSPLj2jeyFpzOZEkzSOM'
+TOKEN= '1620239627:AAFn7BmK9KklQtTr-i7cCeKCqTSBN0FWOyI'
 
 def start(update, context):
     """Send a message when the command /start is issued."""
@@ -27,7 +27,7 @@ def help(update,context):
 
 """START THE BOT"""
 def main():
-    updater = Updater('1640047450:AAFyIlPqqgvUU-CWSPLj2jeyFpzOZEkzSOM')
+    updater = Updater('1620239627:AAFn7BmK9KklQtTr-i7cCeKCqTSBN0FWOyI')
     dp = updater.dispatcher
     dp.add_handler(CommandHandler("planej",sendImage))
     dp.add_handler(CommandHandler("start",start))
@@ -38,7 +38,7 @@ def main():
 updater.start_webhook(listen="0.0.0.0",
                           port=int(PORT),
                           url_path=TOKEN)
-updater.bot.setWebhook('https://obscure-tundra-88639.herokuapp.com/' + TOKEN)
+updater.bot.setWebhook('https://guarded-meadow-10923.herokuapp.com/' + TOKEN)
 
 updater.idle()
 
